@@ -12,7 +12,8 @@
         "Obloq_mitCFU.ts",
         "Obloq.cpp",
         "_locales/zh-cn/Obloq-strings.json",
-        "_locales/zh-tw/Obloq-strings.json"
+        "_locales/zh-tw/Obloq-strings.json",
+        "_locales/da_dk/Obloq-strings.json"
     ],
     "testFiles": [
         "test.ts",
