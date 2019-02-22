@@ -724,7 +724,7 @@ namespace Obloq {
     //% weight=78
     //% blockId=Obloq_http_post_noreturn
     //% block="Send data to mitCFU IoT | Project ID: %projectid| Data %content| Timeout(ms) %time"
-    export function Obloq_http_post_noreturn(projectid: string, content: string, time: number): string {
+    export function Obloq_http_post_noreturn(projectid: string, content: string, time: number): void {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_HTTP_INIT)
             return OBLOQ_STR_TYPE_IS_NONE
