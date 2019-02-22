@@ -11,7 +11,7 @@
         "README.md",
         "Obloq_mitCFU.ts",
         "Obloq.cpp",
-        "_locales/da_dk/Obloq-strings.json"
+        "_locales/da/Obloq-strings.json"
     ],
     "testFiles": [
         "test.ts"
