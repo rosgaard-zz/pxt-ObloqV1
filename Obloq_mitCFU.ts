@@ -673,6 +673,7 @@ namespace Obloq {
      * The HTTP get request.url(string):URL:time(ms): private long maxWait
      * @param time set timeout, eg: 10000
     */
+    /*
     //% weight=79
     //% blockId=Obloq_http_get
     //% block="http(get) | project id: %projectid| timeout(ms) %time"
@@ -690,6 +691,8 @@ namespace Obloq {
 
         return Obloq_http_wait_request(time)
     }
+    */
+    
 
     /**
      * The HTTP post request.url(string): URL; content(string):content
@@ -698,7 +701,7 @@ namespace Obloq {
     */
     //% weight=78
     //% blockId=Obloq_http_post
-    //% block="http(post) | project id: %projectid| content %content| timeout(ms) %time"
+    //% block="Send data to mitCFU IoT | Project ID: %projectid| Data %content| Timeout(ms) %time"
     export function Obloq_http_post(projectid: string, content: string, time: number): string {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_HTTP_INIT)
@@ -710,6 +713,28 @@ namespace Obloq {
         obloqWriteString("|3|2|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/mitCFU/Test/IOT/Receive.ashx?id=" + projectid + "," + content + "|\r")
 
         return Obloq_http_wait_request(time)
+    }
+    
+    
+    /**
+     * The HTTP post request.url(string): URL; content(string):content
+     * time(ms): private long maxWait
+     * @param time set timeout, eg: 10000
+    */
+    //% weight=78
+    //% blockId=Obloq_http_post_noreturn
+    //% block="Send data to mitCFU IoT | Project ID: %projectid| Data %content| Timeout(ms) %time"
+    export function Obloq_http_post_noreturn(projectid: string, content: string, time: number): string {
+        while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
+        if (!OBLOQ_HTTP_INIT)
+            return OBLOQ_STR_TYPE_IS_NONE
+
+        if (!OBLOQ_SERIAL_INIT) {
+            Obloq_serial_init()
+        }
+        obloqWriteString("|3|2|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/mitCFU/Test/IOT/Receive.ashx?id=" + projectid + "," + content + "|\r")
+
+        let answer = Obloq_http_wait_request(time)
     }
 
 
