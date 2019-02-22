@@ -50,7 +50,7 @@ enum TOPIC {
 /**
  *Obloq implementation method.
  */
-//% weight=10 color=#008B00 icon="\uf1eb" block="Obloq"
+//% weight=10 color=#008B00 icon="\uf1eb" block="Obloq mitCFU"
 namespace Obloq {
 
     //serial
