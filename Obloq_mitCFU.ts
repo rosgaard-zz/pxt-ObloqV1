@@ -727,7 +727,7 @@ namespace Obloq {
     export function Obloq_http_post_noreturn(projectid: string, content: string, time: number): void {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_HTTP_INIT)
-            return OBLOQ_STR_TYPE_IS_NONE
+            let hest = OBLOQ_STR_TYPE_IS_NONE
 
         if (!OBLOQ_SERIAL_INIT) {
             Obloq_serial_init()
