@@ -9,7 +9,7 @@
     },
     "files": [
         "README.md",
-        "Obloq.ts",
+        "Obloq_mitCFU.ts",
         "Obloq.cpp",
         "_locales/zh-cn/Obloq-strings.json",
         "_locales/zh-tw/Obloq-strings.json"
@@ -19,5 +19,4 @@
         "httpTest.ts"
     ],
     "public": true,
-    "installedVersion": "workspace:dee399dd-48f4-4833-bae7-879f736bfe46"
 }
