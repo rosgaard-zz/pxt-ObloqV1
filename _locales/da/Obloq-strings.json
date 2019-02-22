@@ -1,0 +1,8 @@
+{
+	"Obloq.Obloq_http_setup|block": "Oblog opret forbindelse | Pins: | Modtag data (grøn ledning): %receive| Send data (blå ledning): %send | Wi-Fi: | Navn (SSID): %SSID| Password: %PASSWORD| Start forbindelsen",
+	"Obloq.Obloq_send_ping|block": "Send Ping",
+	"Obloq.Obloq_get_version|block": "Version",
+	"Obloq.Obloq_wifi_ipconfig|block": "IPConfig",
+	"Obloq.Obloq_http_get|block": "HTTP(GET) | Projekt ID: %projectid| Timeout(ms) %time",
+	"Obloq.Obloq_http_post|block": "HTTP(POST) | Projekt ID: %projectid| Data: %content| Timeout(ms) %time"
+}
