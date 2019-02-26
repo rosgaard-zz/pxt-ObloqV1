@@ -10,7 +10,7 @@
     "files": [
         "README.md",
         "Obloq_mitCFU.ts",
-        "Obloq.cpp",
+        "Obloq_mitCFU.cpp",
         "_locales/da/Obloq-strings.json"
     ],
     "testFiles": [
