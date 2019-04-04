@@ -19,6 +19,6 @@
         "mqttMoretest.ts",
         "httpTest.ts"
     ],
-    "public": true,
+    "public": false,
     "installedVersion": ""
 }
