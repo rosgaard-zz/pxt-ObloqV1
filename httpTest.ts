@@ -8,9 +8,9 @@ Obloq.Obloq_http_setup(
     8080
     )
     basic.forever(() => {
-        basic.showString(Obloq.Obloq_http_get("input?id=1&val=" + input.lightLevel(), 10000))
+        basic.showString(Obloq.Obloq_http_get("4b7ff593-bf90-4109-acba-f6a331c36bfa", 10000))
         basic.pause(50)
-        basic.showString(Obloq.Obloq_http_post("input?name=admin", "{\"id\":\"1\",\"val\":\"" + input.temperature() + "\"}", 10000))
+        basic.showString(Obloq.Obloq_http_post("4b7ff593-bf90-4109-acba-f6a331c36bfa", "100", 10000))
         basic.pause(50)
     })
     
