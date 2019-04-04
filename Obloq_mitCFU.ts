@@ -943,30 +943,6 @@ namespace Obloq {
     }
 
 
-    /**
-     * The HTTP put request,Obloq.put() can only be used for http protocol!
-     * url(string): URL; content(string):content; time(ms): private long maxWait
-     * @param time set timeout, eg: 10000
-    */
-/*
-    //% weight=77
-    //% blockId=Obloq_http_put
-    //% block="http(put) | ProjectID %projectid| Data %content| timeout(ms) %time"
-    export function Obloq_http_put(projectid: string, content: string, time: number): string {
-        while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
-        if (!OBLOQ_HTTP_INIT)
-            return OBLOQ_STR_TYPE_IS_NONE
-
-        if (!OBLOQ_SERIAL_INIT) {
-            Obloq_serial_init()
-        }
-        obloqWriteString("|3|3|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/" + url + "," + content + "|\r")
-
-        return Obloq_http_wait_request(time)
-    }
-*/
-
-
 
     /**
      * Delete an HTTP connection.url(string): URL; content(string):content
