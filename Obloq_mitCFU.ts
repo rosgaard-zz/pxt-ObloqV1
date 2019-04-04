@@ -399,13 +399,11 @@ namespace Obloq {
     })
 
     /**
-     * Two parallel stepper motors are executed simultaneously(DegreeDual).
-     * @param SSID to SSID ,eg: "yourSSID"
-     * @param PASSWORD to PASSWORD ,eg: "yourPASSWORD"
-     * @param IP to IP ,eg: "0.0.0.0"
-     * @param PORT to PORT ,eg: 80
-     * @param receive to receive ,eg: SerialPin.P1
-     * @param send to send ,eg: SerialPin.P2
+     * Forbinder til MitCFU's dataopsamling igennem WiFi.
+	 * @param SerialPin til modtagelse af data
+	 * @param SerialPin til afsendelse af data
+     * @param SSID til dit WiFi
+     * @param PASSWORD til dit WiFi
     */
     //% weight=99
     //% receive.fieldEditor="gridpicker" receive.fieldOptions.columns=3
@@ -426,7 +424,7 @@ namespace Obloq {
     }
 
     /**
-     * Two parallel stepper motors are executed simultaneously(DegreeDual).
+     * SKAL IKKE BENYTTES!
      * @param SSID to SSID ,eg: "yourSSID"
      * @param PASSWORD to PASSWORD ,eg: "yourPASSWORD"
      * @param IOT_ID to IOT_ID ,eg: "yourIotId"
@@ -924,6 +922,8 @@ namespace Obloq {
     /**
      * The HTTP post request.url(string): URL; content(string):content
      * time(ms): private long maxWait
+	 * @param projectid er dit MitCFU IoT Projekt ID
+	 * @param Data er hvad du indsender til dataopsamling
      * @param time set timeout, eg: 10000
     */
     //% weight=78
@@ -940,6 +940,31 @@ namespace Obloq {
         obloqWriteString("|3|2|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/mitCFU/Test/IOT/Receive.ashx?id=" + projectid + "," + content + "|\r")
 
         return Obloq_http_wait_request(time)
+    }
+	
+	
+	
+	/**
+     * The HTTP post request.url(string): URL; content(string):content
+     * time(ms): private long maxWait
+	 * @param projectid er dit MitCFU IoT Projekt ID
+	 * @param Data er hvad du indsender til dataopsamling
+     * @param time set timeout, eg: 10000
+    */
+    //% weight=78
+    //% blockId=Obloq_http_post_noreturn
+    //% block="http(post) | ProjectID %projectid| Data %content| timeout(ms) %time"
+    export function Obloq_http_post_noreturn(projectid: string, content: string, time: number): string {
+        while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
+        if (!OBLOQ_HTTP_INIT)
+            return OBLOQ_STR_TYPE_IS_NONE
+
+        if (!OBLOQ_SERIAL_INIT) {
+            Obloq_serial_init()
+        }
+        obloqWriteString("|3|2|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/mitCFU/Test/IOT/Receive.ashx?id=" + projectid + "," + content + "|\r")
+
+        let answer = Obloq_http_wait_request(time)
     }
 
 
