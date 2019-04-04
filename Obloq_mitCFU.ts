@@ -948,6 +948,7 @@ namespace Obloq {
      * url(string): URL; content(string):content; time(ms): private long maxWait
      * @param time set timeout, eg: 10000
     */
+/*
     //% weight=77
     //% blockId=Obloq_http_put
     //% block="http(put) | ProjectID %projectid| Data %content| timeout(ms) %time"
@@ -963,7 +964,7 @@ namespace Obloq {
 
         return Obloq_http_wait_request(time)
     }
-
+*/
 
 
 
