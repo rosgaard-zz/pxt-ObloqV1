@@ -958,15 +958,14 @@ namespace Obloq {
     //% block="http(post) | ProjectID %projectid| Data %content| timeout(ms) %time"
     export function Obloq_http_post_noreturn(projectid: string, content: string, time: number) : void {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
-        if (!OBLOQ_HTTP_INIT)
-            return OBLOQ_STR_TYPE_IS_NONE
+        if (OBLOQ_HTTP_INIT) {
+		if (!OBLOQ_SERIAL_INIT) {
+		    Obloq_serial_init()
+		}
+		obloqWriteString("|3|2|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/mitCFU/Test/IOT/Receive.ashx?id=" + projectid + "," + content + "|\r")
 
-        if (!OBLOQ_SERIAL_INIT) {
-            Obloq_serial_init()
-        }
-        obloqWriteString("|3|2|http://" + OBLOQ_HTTP_IP + ":" + OBLOQ_HTTP_PORT + "/mitCFU/Test/IOT/Receive.ashx?id=" + projectid + "," + content + "|\r")
-
-        let answer = Obloq_http_wait_request(time)
+		let answer = Obloq_http_wait_request(time)
+	}
     }
 
 
