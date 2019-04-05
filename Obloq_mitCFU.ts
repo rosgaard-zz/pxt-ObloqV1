@@ -8,6 +8,8 @@
  * @copyright	[DFRobot](http://www.dfrobot.com), 2016
  * @copyright	GNU Lesser General Public License
  *
+ * Rettet 2019-04-05
+ *
  * @author [email](xin.li@dfrobot.com)
  * @version  V1.0
  * @date  2018-03-20
