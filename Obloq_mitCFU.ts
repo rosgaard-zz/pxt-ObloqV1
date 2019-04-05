@@ -409,7 +409,7 @@ namespace Obloq {
     //% receive.fieldEditor="gridpicker" receive.fieldOptions.columns=3
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% blockId=Obloq_http_setup
-    //% block="Obloq setup http | Pin set: | receiving data (green wire): %receive| sending data (blue wire): %send | Wi-Fi: | name: %SSID| password: %PASSWORD| http config: | ip: %IP| port: %PORT | start connection"
+    //% block="Obloq setup http | Pin set: | receiving data (green wire): %receive| sending data (blue wire): %send | Wi-Fi: | name: %SSID| password: %PASSWORD| start connection"
     export function Obloq_http_setup(/*serial*/receive: SerialPin, send: SerialPin,
                                      /*wifi*/SSID: string, PASSWORD: string):
         void {
