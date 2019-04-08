@@ -323,7 +323,7 @@ namespace Obloq {
     //% receive.fieldEditor="gridpicker" receive.fieldOptions.columns=3
     //% send.fieldEditor="gridpicker" send.fieldOptions.columns=3
     //% blockId=Obloq_http_setup
-    //% block="Obloq setup http | Pin set: | receiving data (green wire): %receive| sending data (blue wire): %send | Wi-Fi: | name: %SSID| password: %PASSWORD| start connection"
+    //% block="Opret forbindelse | Pin set: | Modtag data (grøn ledning): %receive| Send data (blå ledning): %send | Wi-Fi: | SSID: %SSID| Password: %PASSWORD"
     export function Obloq_http_setup(/*serial*/receive: SerialPin, send: SerialPin,
                                      /*wifi*/SSID: string, PASSWORD: string):
         void {
@@ -677,7 +677,7 @@ namespace Obloq {
     */
     //% weight=78
     //% blockId=Obloq_http_post
-    //% block="http(post) | ProjectID %projectid| Data %content| timeout(ms) %time"
+    //% block="Send data | Projekt ID: %projectid| Data: %content| Timeout(ms): %time"
     export function Obloq_http_post(projectid: string, content: string, time: number): string {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (!OBLOQ_HTTP_INIT)
@@ -702,7 +702,7 @@ namespace Obloq {
     */
     //% weight=78
     //% blockId=Obloq_http_post_noreturn
-    //% block="http(post) | ProjectID %projectid| Data %content| timeout(ms) %time"
+    //% block="Send data | Projekt ID: %projectid| Data: %content| Timeout(ms): %time"
     export function Obloq_http_post_noreturn(projectid: string, content: string, time: number) : void {
         while (OBLOQ_WORKING_MODE_IS_STOP) { basic.pause(20) }
         if (OBLOQ_HTTP_INIT) {
